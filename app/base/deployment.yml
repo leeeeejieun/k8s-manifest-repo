@@ -1,0 +1,20 @@
+---
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: web
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: web
+  template:
+    metadata:
+      labels:
+        app: web
+    spec:
+      containers:
+        - name: web
+          image: arjleun581/1.0
+          ports:
+            - containerPort: 80

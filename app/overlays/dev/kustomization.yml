@@ -1,0 +1,19 @@
+---
+kind: Kustomization
+apiVersion: kustomize.config.k8s.io/v1beta1
+
+resources:
+  - ../../base
+
+# replicas 개수 / 이미지 태그 변경
+patches:
+  - target:
+      kind: Deployment
+      name: web
+    patch: |-
+      - op: replace
+        path: /spec/replicas
+        value: 1
+      - op: replace
+        path: /spec/template/spec/containers/0/image
+        value: arjleun581/ci-cd:1

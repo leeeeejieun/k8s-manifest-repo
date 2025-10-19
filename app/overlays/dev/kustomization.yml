@@ -16,4 +16,4 @@ patches:
         value: 1
       - op: replace
         path: /spec/template/spec/containers/0/image
-        value: arjleun581/ci-cd:1
+        value: arjleun581/ci-cd:1.0
